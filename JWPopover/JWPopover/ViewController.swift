@@ -29,7 +29,14 @@ class ViewController: UIViewController {
         vc.modalPresentationStyle = .popover
         vc.popoverPresentationController!.sourceView = btnPopover
         vc.popoverPresentationController!.sourceRect = btnPopover.bounds
+        vc.popoverPresentationController!.delegate = self
 
         present(vc, animated: true, completion:nil)
+    }
+}
+
+extension ViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return . none
     }
 }
